@@ -213,8 +213,9 @@
                     
                     //Når brikken er plassert på spillerbrettet, må vi sjekke om den - og brikkene rundt - 
                     //utgjør en vinnerkombinasjon. Denne funksjonaliteten ligger i funksjonen sjekkVinner(),
-                    //siden dette er et litt større sett med handlinger og kan gi noen ulike utfall.
-                    sjekkVinner();
+                    //siden dette er et litt større sett med handlinger og kan gi noen ulike utfall
+                    //Timeout slik at koden venter 1 sekund før den sjekker om en spiller har vunnet.
+                    setTimeout(function(){sjekkVinner();}, 1000)
 
                 //Men, hvis cellen ikke er ledig...
                 } else {
@@ -278,6 +279,11 @@
                 document.getElementById("playerturn").innerHTML = "Spiller " + player + " har vunnet!";
                 //Endrer bakgrunnsfargen til den som vinner til gull
                 document.getElementById("playerturn").style.backgroundColor = "#FFD700";
+                //Endrer fargen på brikkene til den som vinner til gull
+                document.getElementById("celle" + vinnerKomboPlass1).style.color = "#FFD700";
+                document.getElementById("celle" + vinnerKomboPlass2).style.color = "#FFD700";
+                document.getElementById("celle" + vinnerKomboPlass3).style.color = "#FFD700";
+
                 //Gjør restart spill-knappen synlig
                 document.getElementById("newgame").style.display = "block";
                 //Sett spillstatus til false, slik at ingen spillere får plassere
