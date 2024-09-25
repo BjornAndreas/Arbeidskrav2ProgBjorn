@@ -304,6 +304,8 @@
             var celleteller = 0;
             while (celleteller < 9) {
                 document.getElementById("celle" + celleteller).innerHTML = "";
+                //Vi tilbakestiller fargen på cellene slik at fargen ikke er gull når vi starter nytt spill
+                document.getElementById("celle" + celleteller).style.color = "#fff";
                 celleteller++;
             }
             // 2)
@@ -313,6 +315,8 @@
             playermark = "X";
             // 4)
             document.getElementById("playerturn").innerHTML = 'Spiller <span id="player">1</span> (<span id="playermark">X</span>) sin tur:';
+            //Vi tilbakestiller fargen slik at fargen ikke er gull når vi klikker på start på nytt knappen
+            document.getElementById("playerturn").style.backgroundColor = "";
         }
     </script>
 </body>
