@@ -169,6 +169,7 @@
         //trenger vi en oversikt over Spillbrettplasseringer. Disse kan vi lagre i en array, siden vi fra
         //starten av koden så at spillbrettet kan tenkes på som indexer i en array.
         //Vi lager klar en oversikt, en array, med 9 tomme plasseringer vi senere kan fylle med spillervalg.
+        
         //Oppdaterer koden slik at det er 16 ruter istedenfor 9
         var spillerBrikker = ["","","","","","","","","","","","","","","",""];
 
@@ -296,6 +297,7 @@
             //Vi må sjekke etter vinner for hver brikke som plasseres på brettet.
             // Dette gjør vi ved å gå gjennom alle vinnerkombinasjonene, og
             //sjekke om brikkene på spillbrettet er like ved indexene til vinnerkombinasjonene:
+
             //Oppdaterer vinnerkombinasjonen til og passe til 4x4
             for(var combination = 0; combination <= 15; combination++) {
                 var vinnerKomboPlass1 = winningCombos[combination][0]; //Henter ut plassering av vinnerkombinasjonens rad 1, eksempel winningCombos[0][0] første runde, som inneholder verdien 0.
@@ -311,6 +313,7 @@
 
                 //Hvis en av plassene i vinnerkombinasjonen er tom, er det ikke vunnet noe.
                 //Da kan løkken bare fortsette å kjøre.
+
                 //Lagt til brikke 4 slik at den passer 4x4 grid
                 if(brikke1 === "" || brikke2 === "" || brikke3 === "" || brikke4 === "") {
                     continue;
@@ -318,6 +321,7 @@
 
                 //Hvis brikke1 er det samme som brikke 2, og brikke 2 er det samme som
                 //brikke3, er alle like, og vi har en vinnerkombinasjon. Da 
+
                 //Oppdatert koden slik at vi får en vinnerkombinasjon på 4 brikker
                 if(brikke1 === brikke2 && brikke2 === brikke3 && brikke3 === brikke4) {
                     rundenVunnet = true;
@@ -355,7 +359,7 @@
             // 1)
             spillerBrikker = ["","","","","","","","","","","","","","","",""];
             var celleteller = 0;
-            while (celleteller < 16) {
+            while (celleteller < 15) {
                 document.getElementById("celle" + celleteller).innerHTML = "";
                 //Vi tilbakestiller fargen på cellene slik at fargen ikke er gull når vi starter et nytt spill
                 document.getElementById("celle" + celleteller).style.color = "#fff";
